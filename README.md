@@ -12,7 +12,7 @@ This approach highlights the strengths of serverless architectures by reducing o
 
 ### Project Architecture:
 
-<img width="1132" ![image](https://github.com/user-attachments/assets/29fdda0f-96e1-49a9-9b10-31af003366be)
+![image](https://github.com/user-attachments/assets/29fdda0f-96e1-49a9-9b10-31af003366be)
 
 
 ### Project Files:
