@@ -15,9 +15,21 @@ This approach highlights the strengths of serverless architectures by reducing o
 ![image](https://github.com/user-attachments/assets/29fdda0f-96e1-49a9-9b10-31af003366be)
 
 
-### Project Files:
-The code employed for this project has been uploaded to this repository, it contains:
+### Development shown in steps:
 
-* Lambda Upload Code (UploadFunction.py): The function that handels files uploads to an S3 Buckect.
-* Lambda Download Code (DownloadFunction.py): The function that handles files downloads from an Amazon S3 bucket.
-* IAM Policy (iam_policy.json): This code represents an AWS Identity and Access Management (IAM) policy, designed to provide fine-grained access control to an S3 bucket.
+1. An S3 bucket is set up as the primary storage location for the files uploaded by users.
+
+2. Set Up Lambda Functions:
+- UploadFunction: A Python-based AWS Lambda function that processes file uploads.
+- DownloadFunction: Another Python Lambda function that handles file downloads.
+Both functions are assigned an IAM role that grants write permissions to the S3 bucket.
+
+3.API Gateway Creation: An API Gateway is set up to create two endpoints (POST and GET) that interact with the Lambda functions:
+- POST /files: Used for uploading files.
+- GET /files: Used for downloading files.
+
+4. The POST and GET methods are configured to handle parameters and content correctly, including using Mapping Templates to ensure the API Gateway passes the necessary information to the Lambda functions.
+
+5. The API is deployed to a specific stage (like "dev"), making it accessible for testing and use.
+
+6. Postman or curl commands are used to test file uploads (using POST requests) and downloads (using GET requests), confirming that the platform works as intended.
